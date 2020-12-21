@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-const UserList = () => {
-  const [usersList, setUsersList] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((response) => setUsersList(response.data));
-  }, []);
+const UserList = ({ usersList }) => {
   return (
     <ul>
       {usersList.map((user) => (
